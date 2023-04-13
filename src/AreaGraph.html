@@ -9,13 +9,16 @@
 <script src="https://d3js.org/d3.v6.js"></script>
 
 <!-- Create a div where the graph will take place -->
-<div id="my_dataviz"></div>
+<div id="my_dataviz">
+  <h2 style="margin-left: 10%;">Year-wise cost incurred due to types of pipeline spills </h2>
+
+</div>
 <script>
 
     // set the dimensions and margins of the graph
-    const margin = {top: 60, right: 230, bottom: 50, left: 100},
+    const margin = {top: 60, right: 230, bottom: 50, left: 200},
         width = 1200 - margin.left - margin.right,
-        height = 960 - margin.top - margin.bottom;
+        height = 900 - margin.top - margin.bottom;
     
     // append the svg object to the body of the page
     const svg = d3.select("#my_dataviz")
@@ -69,12 +72,12 @@
           .text("Time (Year)");
     
       // Add Y axis label:
-      svg.append("text")
-          .attr("text-anchor", "end")
-          .attr("x", 0)
-          .attr("y", -20 )
-          .text("Cost of all the pipeline spills year-by-year")
-          .attr("text-anchor", "start")
+      // svg.append("text")
+      //     .attr("text-anchor", "end")
+      //     .attr("x", 0)
+      //     .attr("y", -20 )
+      //     .text("Cost of all the pipeline spills year")
+      //     .attr("text-anchor", "start")
     
       // Add Y axis
       const y = d3.scaleLinear()

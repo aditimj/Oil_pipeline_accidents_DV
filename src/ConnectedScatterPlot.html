@@ -6,15 +6,18 @@
 <script src="https://d3js.org/d3.v4.js"></script>
 
 <!-- Create a div where the graph will take place -->
-<div id="my_dataviz"></div>
+<div id="my_dataviz">
+  <h2 style="margin-left: 10%;">Year-wise Net Loss due to Oil Pipeline Spill (2010 - 2017)</h2>
+
+</div>
 <button class="arrow-button previous-button" onclick="window.location.href = 'AreaGraph.html'" >&#8249;</button>
 <button class="arrow-button next-button" onclick="window.location.href = 'ConnectedScatterPlot.html'" >&#8250;</button>
 
 <script>
     // set the dimensions and margins of the graph
-    var margin = {top: 10, right: 30, bottom: 30, left: 100},
+    var margin = {top: 10, right: 30, bottom: 30, left: 200},
         width = 960 - margin.left - margin.right,
-        height = 1000 - margin.top - margin.bottom;
+        height = 900 - margin.top - margin.bottom;
     
     // append the svg object to the body of the page
     var svg = d3.select("#my_dataviz")
@@ -46,6 +49,7 @@
           .range([ height, 0 ]);
         svg.append("g")
           .call(d3.axisLeft(y));
+    
         // Add the line
         svg.append("path")
           .datum(data)
