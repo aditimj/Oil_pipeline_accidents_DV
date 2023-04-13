@@ -1,0 +1,28 @@
+body {
+    border: 2px solid black;
+    padding: 10px;
+  }
+  .arrow-button.previous-button {
+  position: absolute;
+  left: 3%;
+  top: 42%;
+  transform: translateX(-50%);
+  color:cornflowerblue;
+  font-size: 190px;  
+  border: none;
+  background-color: white;
+  /* padding: 10px 20px; */
+  cursor: pointer;
+}
+.arrow-button.next-button {
+  position: absolute;
+  right: 1%;
+  top: 42%;
+  transform: translateX(-50%);
+  color:cornflowerblue;
+  font-size: 190px;  
+  border: none;
+  background-color: white;
+  /* padding: 10px 20px; */
+  cursor: pointer;
+}
