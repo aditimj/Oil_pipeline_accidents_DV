@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v6.js"></script>
+<h2 style="margin-left: 10%;">Oil Spill Liquid Types: A Pie Chart Comparison Across Years</h2>
+<!-- Add 2 buttons -->
+<button onclick="update(data1)">2010</button>
+<button onclick="update(data2)">2011</button>
+<button onclick="update(data3)">2012</button>
+<button onclick="update(data4)">2013</button>
+<button onclick="update(data5)">2014</button>
+<button onclick="update(data6)">2015</button>
+<button onclick="update(data7)">2016</button>
+<button onclick="update(data8)">2017</button>
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+
+<script>
+
+    // set the dimensions and margins of the graph
+    const width = 900,
+        height = 700,
+        margin = 150;
+    
+    // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+    const radius = Math.min(width, height) / 2 - margin;
+    
+    // append the svg object to the div called 'my_dataviz'
+    const svg = d3.select("#my_dataviz")
+      .append("svg")
+        .attr("width", width)
+        .attr("height", height)
+      .append("g")
+        .attr("transform", `translate(${width/2}, ${height/2})`);
+    
+    // create 2 data_set
+    const data1 = {BIOFUEL: 0, CO2: 6, CRUDE_OIL: 156, HVL: 63, PETROLEUM_PRODUCT: 125}
+    const data2 = {BIOFUEL: 0, CO2: 4, CRUDE_OIL: 146, HVL: 72, PETROLEUM_PRODUCT: 123}
+    const data3 = {BIOFUEL: 0, CO2: 2, CRUDE_OIL: 189, HVL: 41, PETROLEUM_PRODUCT: 134}
+    const data4 = {BIOFUEL: 0, CO2: 5, CRUDE_OIL: 205, HVL: 57, PETROLEUM_PRODUCT: 134}
+    const data5 = {BIOFUEL: 1, CO2: 5, CRUDE_OIL: 241, HVL: 50, PETROLEUM_PRODUCT: 157}
+    const data6 = {BIOFUEL: 0, CO2: 7, CRUDE_OIL: 258, HVL: 63, PETROLEUM_PRODUCT: 134}
+    const data7 = {BIOFUEL: 1, CO2: 9, CRUDE_OIL: 202, HVL: 72, PETROLEUM_PRODUCT: 131}
+    const data8 = {BIOFUEL: 0, CO2: 0, CRUDE_OIL: 1, HVL: 0, PETROLEUM_PRODUCT: 1}
+    
+    
+    
+    // set the color scale
+    const color = d3.scaleOrdinal()
+      .domain(["BIOFUEL", "CO2", "CRUDE_OIL", "HVL", "PETROLEUM_PRODUCT"])
+      .range(d3.schemeReds[5]);
+    
+    
+    // A function that create / update the plot for a given variable:
+    function update(data) {
+    
+      // Compute the position of each group on the pie:
+      const pie = d3.pie()
+        .value(function(d) {return d[1]; })
+        .sort(function(a, b) { return d3.ascending(a.key, b.key);} ) // This make sure that group order remains the same in the pie chart
+      const data_ready = pie(Object.entries(data))
+    
+      // map to data
+      const u = svg.selectAll("path")
+        .data(data_ready)
+    
+      // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
+      u
+        .join('path')
+        .transition()
+        .duration(1000)
+        .attr('d', d3.arc()
+          .innerRadius(0)
+          .outerRadius(radius)
+        )
+        .attr('fill', function(d){ return(color(d.data[0])) })
+        .attr("stroke", "white")
+        .style("stroke-width", "2px")
+        .style("opacity", 1)
+
+
+
+
+
+  // Add legends to the pie chart
+  const legendRectSize = 30;
+  const legendSpacing = 1;
+  const legends = svg.selectAll('.legend')
+    .data(data_ready)
+    .enter()
+    .append('g')
+    .attr('class', 'legend')
+    .attr('transform', function(d, i) {
+      const height = legendRectSize + legendSpacing;
+      const offset = height * color.domain().length / 2;
+      const horz = 8 * legendRectSize;
+      const vert = i * height - offset;
+      return 'translate(' + horz + ',' + vert + ')';
+    });
+
+  legends.append('rect')
+    .attr('width', legendRectSize)
+    .attr('height', legendRectSize)
+    .style('fill', function(d) { return color(d.data[0]); })
+    .style('stroke', function(d) { return color(d.data[0]); });
+
+  legends.append('text')
+    .attr("font-size", "14px")
+
+    .attr('x', 35)
+    .attr('y', 20)
+    .text(function(d) { return d.data[0]; });
+
+
+
+
+
+}
+    
+// Initialize the plot with the first dataset
+    update(data1)
+    
+    </script>
