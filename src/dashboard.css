@@ -50,8 +50,15 @@ iframe {
 
 #miniBarchart {
     left: -100px;
-    top: 2600px;
+    top: 2650px;
 }
-
+#miniBarYearAccCnt {
+    left: 900px;
+    top: 2650px;
+}
+#miniMonthAccCnt {
+    left: -100px;
+    top: 3500px;
+}
 .container{position:relative;float:left;}
 .overlay{top:0;left:0;width:90%;height:100%;position:absolute; cursor: pointer;}

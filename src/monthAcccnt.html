@@ -3,15 +3,20 @@
 
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v4.js"></script>
+<link rel="stylesheet" type="text/css" href="util.css">
 
+<h1>Month wise accident count</h1>
 <!-- Create a div where the graph will take place -->
+<button class="arrow-button previous-button" onclick="window.location.href = 'bar_year_accCnt.html'" >&#8249;</button>
+<button class="arrow-button next-button" onclick="window.location.href = 'dashboard.html'" >&#8250;</button>
+
 <div id="my_dataviz"></div>
 <script>
 
 	// set the dimensions and margins of the graph
-	var margin = {top: 30, right: 30, bottom: 70, left: 60},
-		width = 800 - margin.left - margin.right,
-		height = 850 - margin.top - margin.bottom;
+	var margin = {top: 30, right: 30, bottom: 70, left: 160},
+		width = 900 - margin.left - margin.right,
+		height = 950 - margin.top - margin.bottom;
 	
 	// append the svg object to the body of the page
 	var svg = d3.select("#my_dataviz")
@@ -27,20 +32,7 @@
         data.sort(function(b, a) {
             return a.AccidentCount - b.AccidentCount;
           });
-	  // Define color scale
-	 // var color = d3.scaleOrdinal(d3.schemeCategory20);
-    //var color=d3.scaleOrdinal(d3.interpolateGreens);
-    //var color = d3.scaleOrdinal().range(["#FF0000", "#FF3300", "#FF6600", "#FF9900", "#FFCC00", "#FFFF00", "#FFFF33", "#FFFF66", "#FFFF99", "#FFFFCC", "#FFFFFF", "#CCCCCC"]);
-
-    //var color = d3.scaleOrdinal().range(["#8B0000", "#A52A2A", "#CD5C5C", "#FF7F50", "#FFA07A", "#FFC0CB", "#FFB6C1", "#FFC3A0", "#FFDAB9", "#FFE4E1", "#F5DEB3", "#FFEBCD"]);
-    //var color = d3.scaleOrdinal().range(["#67000d", "#a50f15", "#cb181d", "#ef3b2c", "#fb6a4a", "#fc9272", "#fcbba1", "#fee0d2", "#fff5f0", "#ffffff", "#f7f7f7", "#d9d9d9"]);
-
-    //var color = d3.scaleOrdinal().range(["#8B0000", "#A50000", "#CD0000", "#FF0000", "#FF3333", "#FF6666", "#FF9999", "#FFCCCC", "#FFE5E5", "#FFF2F2", "#FFFFFF", "#FFFFFF"]);
-
-   // var color = d3.scaleOrdinal().range(["#8B0000", "#A50000", "#CD0000", "#FF0000", "#FF3333", "#FF6666", "#FF9999", "#FFCCCC", "#FFE5E5", "#FFEEEE", "#FFF5F5", "#FFFFFF"]);
-   //var color = d3.scaleOrdinal().range(["#8B0000", "#A50000", "#CD0000", "#FF0000", "#FF3333", "#FF6666", "#FF9999", "#FFCCCC", "#FFE5E5", "#FFB6B6", "#FF8C8C", "#FF6666"]);
-   //var color = d3.scaleOrdinal().range(["#8B0000", "#A50000", "#CD0000", "#FF0000", "#FF5500", "#FFAA00", "#FFFF00", "#FFFF66", "#FFFFCC", "#FFFFF2", "#FFFFFA", "#FFFFFF"]);
-   var color = d3.scaleOrdinal().range(["#8B0000", "#A50000", "#CD0000", "#FF0000", "#FF3333","#FF6666","#FF5500", "#FFAA00", "#FFFF00", "#FFF056", "#FFDD8E", "#FFEAC9", "#FFF5F0", "#FFFFFF"]);
+  var color = d3.scaleOrdinal().range(["#8B0000", "#A50000", "#CD0000", "#FF0000", "#FF3333","#FF6666","#FF5500", "#FFAA00", "#FFFF00", "#FFF056", "#FFDD8E", "#FFEAC9", "#FFF5F0", "#FFFFFF"]);
 
 	  // X axis
 	  var x = d3.scaleBand()
@@ -53,14 +45,27 @@
 		.selectAll("text")
 		  .attr("transform", "translate(-10,0)rotate(-45)")
 		  .style("text-anchor", "end");
+		  svg.selectAll(".domain")
+  .style("stroke", "white");
+svg.selectAll(".tick line")
+  .style("stroke", "white");
+svg.selectAll(".tick text")
+  .style("fill", "white");
+
 	
 	  // Add Y axis
 	  var y = d3.scaleLinear()
-		.domain([0, 300])
-		.range([ height, 0]);
-	  svg.append("g")
-		.call(d3.axisLeft(y));
+	.domain([0, 300])
+	.range([ height, 0]);
 	
+svg.append("g")
+	.call(d3.axisLeft(y))
+	.selectAll("text")
+		.style("fill", "white");
+
+svg.selectAll(".domain")
+	.style("stroke", "white");
+
 	  // Bars
 	  svg.selectAll("mybar")
 		.data(data)
@@ -76,3 +81,9 @@
 	})
 	
 </script>
+<style>
+
+#my_dataviz {
+	 background-color: rgb(36, 35, 35);
+   }
+</style>
