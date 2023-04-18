@@ -5,7 +5,13 @@
 <script src="https://d3js.org/d3.v4.js"></script>
 <link rel="stylesheet" type="text/css" href="util.css">
 
-<h1>Month wise accident count</h1>
+<nav>
+	<ul>
+	  <li><h1 style="font-size:30px; font-weight: bold;">Month wise accident count</h1>  </li>
+	  <li style="align-self: flex-end;"><a href="../src/dashboard.html">Dashboard</a></li>
+	</ul>
+	</nav>
+
 <body>	<style>
 	/* Adjust the styles for the text container */
 	.text-container {
@@ -43,7 +49,7 @@
 	// set the dimensions and margins of the graph
 	var margin = {top: 30, right: 30, bottom: 70, left: 160},
 		width = 900 - margin.left - margin.right,
-		height = 950 - margin.top - margin.bottom;
+		height = 1050 - margin.top - margin.bottom;
 	
 	// append the svg object to the body of the page
 	var svg = d3.select("#my_dataviz")
