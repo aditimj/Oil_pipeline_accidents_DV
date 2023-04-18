@@ -1,4 +1,6 @@
-
+/* body {
+    background-color:black;
+} */
 iframe {
     /* Set the width of the iframe the size you want to transform it FROM */
     width: 1108px;
@@ -12,31 +14,34 @@ iframe {
     transform:scale(0.80);
     /* position it, as if it was the original size */
     position: absolute;
+    pointer-events: unset!important; /*add this it*/
 }  
 
 #MiniConnectedScatterPlot {
     /* left: -380px;
     top: -310px; */
     left: -100px;
-    top: -30px;
+    top: 100px;
 }
 
 #miniAreaGraph {
     left: 900px;
-    top: -30px;
+    top: 100px;
 }
 
 #miniCircular {
     left: -100px;
-    top: 800px;
+    top: 950px;
 }
 
 #miniSpider {
     left: 900px;
-    top: 800px;
+    top: 950px;
 }
 
 #miniHeatmap {
     left: -100px;
-    top: 1650px;
+    top: 1800px;
 }
+.container{position:relative;float:left;}
+.overlay{top:0;left:0;width:90%;height:100%;position:absolute; cursor: pointer;}

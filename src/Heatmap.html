@@ -1,17 +1,41 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="util.css">
 
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v6.js"></script>
+<button class="arrow-button previous-button" onclick="window.location.href = 'AreaGraph.html'" >&#8249;</button>
+<!-- <button class="arrow-button next-button" onclick="window.location.href = 'Heatmap.html'" >&#8250;</button> -->
+<div class="text-container">
+  <p>This is some example text to display alongside the visualization.
+  This is some example text to display alongside the visualization.
+  This is some example text to display alongside the visualization.
+  This is some example text to display alongside the visualization.
+  This is some example text to display alongside the visualization. This is some example text to display alongside the visualization.
+  This is some example text to display alongside the visualization.
+  This is some example text to display alongside the visualization.
+  This is some example text to display alongside the visualization. This is some example text to display alongside the visualization.
+  This is some example text to display alongside the visualization.
+  This is some example text to display alongside the visualization.
+  This is some example text to display alongside the visualization. This is some example text to display alongside the visualization.
+  Thi s is some example text to display alongside the visualization.
+  This is some example text to display alongside the visualization.
+  This is some example text to display alongside the visualization. This is some example text to display alongside the visualization.
+  This is some example text to display alongside the visualization.
+  This is some example text to display alongside the visualization.
+  This is some example text to display alongside the visualization.
+  </p>
+</div>
+
 
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz"></div>
 <script>
 
     // set the dimensions and margins of the graph
-    const margin = {top: 80, right: 25, bottom: 30, left: 100},
-      width = 800 - margin.left - margin.right,
-      height = 850 - margin.top - margin.bottom;
+    const margin = {top: 180, right: 25, bottom: 30, left: 100},
+      width = 1000 - margin.left - margin.right,
+      height = 1200 - margin.top - margin.bottom;
     
     // append the svg object to the body of the page
     const svg = d3.select("#my_dataviz")
@@ -128,3 +152,15 @@
     
     
     </script>
+<style>
+	/* Adjust the styles for the text container */
+	.text-container {
+		position: absolute;
+		top: 30%;
+		right: 10%;
+		width: 35%;
+		padding: 10px;
+		background-color: #f9f9f9;
+		border: 1px solid #ddd;
+	}
+  </style>
