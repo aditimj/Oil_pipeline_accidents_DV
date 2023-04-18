@@ -20,7 +20,17 @@
   <button id="yearButton" onclick="update(data7)">2016</button>
   <button id="yearButton" onclick="update(data8)">2017</button>
 </div>
+<div class="text-container">
+  <p>
+    <li style="font-size:20px;">This pie chart compares the proportion of different types of liquid spills across years. The chart shows the proportion of five different types of liquids - BIOFUEL, CO2, CRUDE_OIL, HVL, and PETROLEUM_PRODUCT, spilled during the years 2010 to 2017 due to pipeline spills. </li>
+    <li style="font-size:20px;">The visualization reveals that crude oil has been the most frequently spilled liquid each year, followed by petroleum products and HVL</li>
+    <li style="font-size:20px;">The interactive button(years) in the above Visualization allows the user to navigate through different years and compare the proportion of different liquid types spilled in each year.</li>
+    <li style="font-size:20px;">The pie chart demonstrates the importance of continued efforts to prevent pipeline spills and reduce the environmental impact of spills.</li>
 
+  </p>
+  
+  </p>
+</div>
 
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz"></div>
@@ -115,7 +125,7 @@ legends.append('rect')
   .style('stroke', function(d) { return color(d.data[0]); });
 
 legends.append('text')
-  .attr("font-size", "14px")
+  .attr("font-size", "12px")
   .attr('x', 35)
   .attr('y', 20)
   .text(function(d) { return d.data[0]; })
@@ -129,7 +139,15 @@ legends.append('text')
     </script>
 
 <style>
- 
+ .text-container {
+		position: absolute;
+		top: 30%;
+		right: 10%;
+		width: 35%;
+		padding: 10px;
+		background-color: #f9f9f9;
+		border: 1px solid #ddd;
+	}
   #my_dataviz {
   background-color: rgb(36, 35, 35);
 }

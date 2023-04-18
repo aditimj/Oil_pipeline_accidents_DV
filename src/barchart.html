@@ -12,7 +12,16 @@
 <button id="loss_recovery_button" onclick="update('var1')">Liquid Recovery (Barrels)</button>
 <button class="arrow-button previous-button" onclick="window.location.href = 'piechart.html'" >&#8249;</button>
 <button class="arrow-button next-button" onclick="window.location.href = 'bar_year_accCnt.html'" >&#8250;</button>
+<div class="text-container">
+  <p>
+    <li style="font-size:20px;">This interactive bar chart visualizes the top 10 oil spill operators ranked by net loss (barrels) and liquid recovery (barrels). </li>
+    <li style="font-size:20px;">The visulization aims to show the significant impact of oil spills caused by pipeline leaks</li>
+    <li style="font-size:20px;">The data shows that pipeline spills caused significant damage to property, commodities, and the environment, as shown by the high net loss values.</li>
+    <li style="font-size:20px;">The visulization emphasizes the importance of continued efforts to prevent pipeline spills and mitigate the associated cost</li>
+  </p>
 
+  </p>
+</div>
 </div>
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz"></div>
@@ -119,7 +128,15 @@ u.join("rect")
     
     </script>
     <style>
- 
+      .text-container {
+		position: absolute;
+		top: 30%;
+		right: 10%;
+		width: 35%;
+		padding: 10px;
+		background-color: #f9f9f9;
+		border: 1px solid #ddd;
+	}
       #my_dataviz {
       background-color: rgb(36, 35, 35);
     }

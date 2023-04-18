@@ -8,6 +8,16 @@
 <button class="arrow-button previous-button" onclick="window.location.href = 'barchart.html'" >&#8249;</button>
 <button class="arrow-button next-button" onclick="window.location.href = 'monthAcccnt.html'" >&#8250;</button>
 <h1>Year wise accident count</h1>
+<div class="text-container">
+	<p>
+	  <li style="font-size:20px;">This bar chart presents the total accident count with respect to Year. The graph helps provide insights into the time dependence of accidents.</li>
+	  <li style="font-size:20px;">The graph shows a decreasing trend in the number of accidents over the years, highlighting the need for continued efforts to prevent pipeline spills and mitigate the associated costs by showing the number of accidents over time</li>
+	  <!-- <li style="font-size:20px;"></li> -->
+	  <li style="font-size:20px;"> This visualization help in providing insights about the time dependence on the accidents, helps to understand the correlation between time and accident count</li>
+	</p>
+	
+	</p>
+  </div>
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz"></div>
 <script>
@@ -92,7 +102,15 @@ svg.selectAll(".tick text")
 .axis line {
   stroke: white;
 }
-   
+.text-container {
+		position: absolute;
+		top: 30%;
+		right: 10%;
+		width: 35%;
+		padding: 10px;
+		background-color: #f9f9f9;
+		border: 1px solid #ddd;
+	}
 	 #my_dataviz {
 	 background-color: rgb(36, 35, 35);
    }
