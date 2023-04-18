@@ -26,3 +26,18 @@ body {
   /* padding: 10px 20px; */
   cursor: pointer;
 }
+#yearButton{
+  background-color: rgb(141, 47, 47);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
+  color: aliceblue;
+}
+#loss_recovery_button{
+  background-color: rgb(141, 47, 47);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
+  color: aliceblue;
+  margin-left: 2%;
+}

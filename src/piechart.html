@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="util.css">
 
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v6.js"></script>
 <h2 style="margin-left: 10%;">Oil Spill Liquid Types: A Pie Chart Comparison Across Years</h2>
+<button class="arrow-button previous-button" onclick="window.location.href = 'Heatmap.html'" >&#8249;</button>
+<button class="arrow-button next-button" onclick="window.location.href = 'barchart.html'" >&#8250;</button>
+
 <!-- Add 2 buttons -->
-<button onclick="update(data1)">2010</button>
-<button onclick="update(data2)">2011</button>
-<button onclick="update(data3)">2012</button>
-<button onclick="update(data4)">2013</button>
-<button onclick="update(data5)">2014</button>
-<button onclick="update(data6)">2015</button>
-<button onclick="update(data7)">2016</button>
-<button onclick="update(data8)">2017</button>
+  <button id="yearButton" onclick="update(data1)">2010</button>
+  <button id="yearButton" onclick="update(data2)">2011</button>
+  <button id="yearButton" onclick="update(data3)">2012</button>
+  <button id="yearButton" onclick="update(data4)">2013</button>
+  <button id="yearButton" onclick="update(data5)">2014</button>
+  <button id="yearButton" onclick="update(data6)">2015</button>
+  <button id="yearButton" onclick="update(data7)">2016</button>
+  <button id="yearButton" onclick="update(data8)">2017</button>
+  
+
 
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz"></div>
@@ -20,8 +26,8 @@
 <script>
 
     // set the dimensions and margins of the graph
-    const width = 900,
-        height = 700,
+    const width = 1200,
+        height = 900,
         margin = 150;
     
     // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
@@ -95,8 +101,8 @@
     .attr('transform', function(d, i) {
       const height = legendRectSize + legendSpacing;
       const offset = height * color.domain().length / 2;
-      const horz = 8 * legendRectSize;
-      const vert = i * height - offset;
+      const horz = 12 * legendRectSize;
+      const vert = i * height - offset-5;
       return 'translate(' + horz + ',' + vert + ')';
     });
 
