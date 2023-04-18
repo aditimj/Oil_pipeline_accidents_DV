@@ -4,6 +4,7 @@
 
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v6.js"></script>
+<h1>Year-wise representation of States with high intentional barrel releases</h1>
 <button class="arrow-button previous-button" onclick="window.location.href = 'spider.html'" >&#8249;</button>
 <button class="arrow-button next-button" onclick="window.location.href = 'Piechart.html'" >&#8250;</button>
 <div class="text-container">
@@ -33,7 +34,7 @@
 <script>
 
     // set the dimensions and margins of the graph
-    const margin = {top: 180, right: 25, bottom: 30, left: 150},
+    const margin = {top: 100, right: 25, bottom: 30, left: 150},
       width = 900 - margin.left - margin.right,
       height = 1000 - margin.top - margin.bottom;
     
@@ -132,16 +133,6 @@
         .on("mousemove", mousemove)
         .on("mouseleave", mouseleave)
     })
-    
-    // Add title to graph
-    svg.append("text")
-            .attr("x", 0)
-            .attr("y", -50)
-            .attr("text-anchor", "left")
-            .style("font-size", "23px")
-            .style("font-weight", "bold")
-            .style("fill","white")
-            .text("Year-wise representation of States with high intentional barrel releases");
     
     // Add subtitle to graph
     svg.append("text")
