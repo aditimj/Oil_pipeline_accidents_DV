@@ -6,7 +6,7 @@
 </head>
 <body>
   <div id="container">
-    <h2 style="margin-left: 10%;">Costs incurred due to Oil Spill</h2>
+    <h2 style="margin-left: 10%;color:white">Costs incurred due to Oil Spill</h2>
     <svg width="1200" height="900" font-family="sans-serif" font-size="10" ></svg>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="../d3-scale-radial.js"></script>
@@ -68,11 +68,12 @@ d3.csv("../data.csv", function(d, i, columns) {
 
   label.append("line")
       .attr("x2", -5)
-      .attr("stroke", "#000");
+      .attr("stroke", "white");
 
   label.append("text")
       .attr("transform", function(d) { return (x(d.State) + x.bandwidth() / 2 + Math.PI / 2) % (2 * Math.PI) < Math.PI ? "rotate(90)translate(0,16)" : "rotate(-90)translate(0,-9)"; })
-      .text(function(d) { return d.State; });
+      .text(function(d) { return d.State; })
+      .style("fill","white");
 
   var yAxis = g.append("g")
       .attr("text-anchor", "middle");
@@ -84,14 +85,14 @@ d3.csv("../data.csv", function(d, i, columns) {
 
   yTick.append("circle")
       .attr("fill", "none")
-      .attr("stroke", "#000")
+      .attr("stroke", "white")
       .attr("r", y);
 
   yTick.append("text")
       .attr("y", function(d) { return -y(d); })
       .attr("dy", "0.35em")
       .attr("fill", "none")
-      .attr("stroke", "#fff")
+      .attr("stroke", "white")
       .attr("stroke-width", 5)
       .text(y.tickFormat(5, "s"));
 
@@ -112,11 +113,13 @@ d3.csv("../data.csv", function(d, i, columns) {
       .attr("height", 18)
       .attr("fill", z);
 
+
   legend.append("text")
       .attr("x", 24)
       .attr("y", 9)
       .attr("dy", "0.35em")
-      .text(function(d) { return d; });
+      .text(function(d) { return d; })
+      .style("fill","white");
 });
 
 </script>

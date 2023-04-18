@@ -8,9 +8,9 @@
   <button class="arrow-button previous-button" onclick="window.location.href = 'AreaGraph.html'" >&#8249;</button>
   <button class="arrow-button next-button" onclick="window.location.href = 'spider.html'" >&#8250;</button>
   <div id="container">
-    <h2 style="margin-left: 10%;">Costs incurred due to Oil Spill</h2>
+    <h2 style="margin-left: 10%;color:white">Costs incurred due to Oil Spill</h2>
    <div id="my_dataviz">
-			<h2 style="margin-left: 10%;">Year-wise cost incurred due to types of pipeline spills </h2>
+			<!-- <h2 style="margin-left: 10%;">Year-wise cost incurred due to types of pipeline spills </h2> -->
 			<div class="text-container">
 			  <p>This is some example text to display alongside the visualization.
 				This is some example text to display alongside the visualization.
@@ -97,11 +97,12 @@ d3.csv("data.csv", function(d, i, columns) {
 
   label.append("line")
       .attr("x2", -5)
-      .attr("stroke", "#000");
+      .attr("stroke", "white");
 
   label.append("text")
       .attr("transform", function(d) { return (x(d.State) + x.bandwidth() / 2 + Math.PI / 2) % (2 * Math.PI) < Math.PI ? "rotate(90)translate(0,16)" : "rotate(-90)translate(0,-9)"; })
-      .text(function(d) { return d.State; });
+      .text(function(d) { return d.State; })
+      .style("fill","white");;
 
   var yAxis = g.append("g")
       .attr("text-anchor", "middle");
@@ -113,14 +114,14 @@ d3.csv("data.csv", function(d, i, columns) {
 
   yTick.append("circle")
       .attr("fill", "none")
-      .attr("stroke", "#000")
+      .attr("stroke", "white")
       .attr("r", y);
 
   yTick.append("text")
       .attr("y", function(d) { return -y(d); })
       .attr("dy", "0.35em")
       .attr("fill", "none")
-      .attr("stroke", "#fff")
+      .attr("stroke", "white")
       .attr("stroke-width", 5)
       .text(y.tickFormat(5, "s"));
 
@@ -145,7 +146,8 @@ d3.csv("data.csv", function(d, i, columns) {
       .attr("x", 24)
       .attr("y", 9)
       .attr("dy", "0.35em")
-      .text(function(d) { return d; });
+      .text(function(d) { return d; })
+      .style("fill","white");;
 });
 
 </script>
@@ -165,6 +167,9 @@ d3.csv("data.csv", function(d, i, columns) {
 		background-color: #f9f9f9;
 		border: 1px solid #ddd;
 	}
+  #container {
+  background-color: rgb(36, 35, 35);
+  }
   </style>
 
 </div>

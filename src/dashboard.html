@@ -3,14 +3,16 @@
     <link rel="stylesheet" type="text/css" href="dashboard.css">
 
 <head>
-    <h1 style="text-align: center; font-size: 50px;">Oil Pipeline Accidents and its AfterEffects</h1>
+    <!-- <h1 style="text-align: center; font-size: 50px;">Oil Pipeline Accidents and its AfterEffects</h1> -->
     <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    
 </head>
 
 <body>
-   
+  <header>
+    <h1>Oil Pipeline Accidents and its Aftereffects</h1>
+  </header>>  
     <div class="dropdown">
         <button class="dropbtn">Select a Graph</button>
         <div class="dropdown-content">
@@ -21,6 +23,7 @@
           <a href="../src/Heatmap.html" onclick="handleFruitSelection('Graph 5')">Graph 5</a>
         </div>
       </div>
+    
 
     <iframe  id="MiniConnectedScatterPlot" src="http://127.0.0.1:5500/src/miniGraphs/MiniConnectedScatterPlot.html" title="description"></iframe>       
     <iframe  id="miniAreaGraph" src="http://127.0.0.1:5500/src/miniGraphs/miniAreaGraph.html" title="description"></iframe>
@@ -42,7 +45,30 @@
         });
       </script>
 </body>
+
 <style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: rgb(36, 35, 35);
+}
+
+/* Set header styles */
+header {
+  background-color: #780d0d;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
 
 .show {
     display: block;
@@ -58,6 +84,7 @@
   background-color:brown;
   color: #333;
   padding: 10px 20px;
+  margin-top: 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -91,6 +118,23 @@
   background-color: #ddd;
 }
 
+footer {
+  background-color: #780d0d;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
 
+footer p {
+  margin: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
   </style>
+
+<!-- <footer>
+  <p>&copy; 2023 Oil Pipeline</p>
+</footer> -->
 </html>

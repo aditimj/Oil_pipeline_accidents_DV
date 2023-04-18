@@ -10,7 +10,7 @@
 
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz">
-  <h2 style="margin-left: 10%;">Year-wise cost incurred due to types of pipeline spills </h2>
+  <h2 style="margin-left: 10%;color:white">Year-wise cost incurred due to types of pipeline spills </h2>
   <div class="text-container">
     <p>This is some example text to display alongside the visualization.
       This is some example text to display alongside the visualization.
@@ -83,21 +83,24 @@
       const xAxis = svg.append("g")
         .attr("transform", `translate(0, ${height})`)
         .call(d3.axisBottom(x).ticks(5))
+        .style("color", "white");
     
       // Add X axis label:
       svg.append("text")
           .attr("text-anchor", "end")
           .attr("x", width)
           .attr("y", height+40 )
-          .text("Time (Year)");
+          .text("Time (Year)")
+          .style("fill", "white");
     
       // Add Y axis label:
-      // svg.append("text")
-      //     .attr("text-anchor", "end")
-      //     .attr("x", 0)
-      //     .attr("y", -20 )
-      //     .text("Cost of all the pipeline spills year")
-      //     .attr("text-anchor", "start")
+      svg.append("text")
+          .attr("text-anchor", "end")
+          .attr("x", 0)
+          .attr("y", -20 )
+          .text("Cost of all the pipeline spills year")
+          .attr("text-anchor", "start")
+          .style("fill", "white");
     
       // Add Y axis
       const y = d3.scaleLinear()
@@ -105,6 +108,7 @@
         .range([ height, 0 ]);
       svg.append("g")
         .call(d3.axisLeft(y).ticks(5))
+        .style("color", "white");
     
     
     
@@ -241,4 +245,8 @@
       background-color: #f9f9f9;
       border: 1px solid #ddd;
   }
+  #my_dataviz {
+  background-color: rgb(36, 35, 35);
+}
+
 </style>
