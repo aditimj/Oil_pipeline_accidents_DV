@@ -6,11 +6,38 @@
 <link rel="stylesheet" type="text/css" href="util.css">
 
 <h1>Month wise accident count</h1>
+<body>	<style>
+	/* Adjust the styles for the text container */
+	.text-container {
+		position: absolute;
+		top: 30%;
+		right: 10%;
+		width: 35%;
+		padding: 10px;
+		background-color: #f9f9f9;
+		border: 1px solid #ddd;
+	}
+	#my_dataviz {
+	background-color: rgb(36, 35, 35);
+  }
+  </style></body>
 <!-- Create a div where the graph will take place -->
 <button class="arrow-button previous-button" onclick="window.location.href = 'bar_year_accCnt.html'" >&#8249;</button>
 <button class="arrow-button next-button" onclick="window.location.href = 'dashboard.html'" >&#8250;</button>
 
 <div id="my_dataviz"></div>
+
+
+	  <div class="text-container">
+		<p>
+		  <li style="font-size:20px;">This bar chart visualizes the number of oil spill accidents that occurred on a month-wise basis. </li>
+			<li style="font-size:20px;">The data shows that the highest number of oil spill accidents occurred in January and October has least number of accidents.
+	
+			</li>
+		  </p>
+	  </div>
+	</div>
+
 <script>
 
 	// set the dimensions and margins of the graph
