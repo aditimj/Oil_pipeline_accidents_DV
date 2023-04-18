@@ -1,4 +1,4 @@
-​# Oil Pipeline Accidents and its Aftereffects ​
+ # Oil Pipeline Accidents and its Aftereffects
 
 ## Getting Started
 
@@ -6,11 +6,9 @@
 To get started with this project, follow these steps:
 
 - Clone the repository by running git clone 
-```bash
-https://github.com/<username>/<repository-name>.git
-``` in the terminal 
-- Navigate to the src directory by running cd src in your terminal.
-- Open the home.html file in your preferred web browser.
+```bash https://github.com/<username>/<repository-name>.git ``` in the terminal 
+- Navigate to the src directory by running ```cd src``` in your terminal.
+- Open the ```home.html``` file in your preferred web browser.
 - Navigate to the dashboard to see the visualization.
 
 ## Dependencies
