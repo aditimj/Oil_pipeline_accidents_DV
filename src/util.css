@@ -7,10 +7,10 @@ body {
   left: 3%;
   top: 42%;
   transform: translateX(-50%);
-  color:cornflowerblue;
+  color:#780d0d;
   font-size: 190px;  
   border: none;
-  background-color: white;
+  background-color:  rgb(36, 35, 35);;
   /* padding: 10px 20px; */
   cursor: pointer;
 }
@@ -19,22 +19,22 @@ body {
   right: 1%;
   top: 42%;
   transform: translateX(-50%);
-  color:cornflowerblue;
+  color:#780d0d;
   font-size: 190px;  
   border: none;
-  background-color: white;
+  background-color:  rgb(36, 35, 35);
   /* padding: 10px 20px; */
   cursor: pointer;
 }
 #yearButton{
-  background-color: rgb(141, 47, 47);
+  background-color: #780d0d;
   padding: 10px;
   border-radius: 10px;
   margin: 5px;
   color: aliceblue;
 }
 #loss_recovery_button{
-  background-color: rgb(141, 47, 47);
+  background-color: #780d0d;
   padding: 10px;
   border-radius: 10px;
   margin: 5px;
