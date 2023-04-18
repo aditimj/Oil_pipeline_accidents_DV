@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="util.css">
 
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v6.js"></script>
 <div id="buttondiv">
 
 <h2 style="margin-left: 10%;color:white">Oil Spill Liquid Types: A Pie Chart Comparison Across Years</h2>
-<button class="arrow-button previous-button" onclick="window.location.href = 'Heatmap.html'" >&#8249;</button>
-<button class="arrow-button next-button" onclick="window.location.href = 'barchart.html'" >&#8250;</button>
 
 <!-- Add 2 buttons -->
   <button id="yearButton" onclick="update(data1)">2010</button>
@@ -129,7 +126,14 @@ legends.append('text')
     </script>
 
 <style>
- 
+ #yearButton{
+  background-color: #780d0d;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
+  color: aliceblue;
+}
+
   #my_dataviz {
   background-color: rgb(36, 35, 35);
 }

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="util.css">
+<!-- <link rel="stylesheet" type="text/css" href="util.css"> -->
 
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v6.js"></script>
@@ -10,8 +10,6 @@
 
 <button id="loss_recovery_button" onclick="update('var2')">Net Loss (Barrels)</button>
 <button id="loss_recovery_button" onclick="update('var1')">Liquid Recovery (Barrels)</button>
-<button class="arrow-button previous-button" onclick="window.location.href = 'piechart.html'" >&#8249;</button>
-<button class="arrow-button next-button" onclick="window.location.href = 'dashboard.html'" >&#8250;</button>
 
 </div>
 <!-- Create a div where the graph will take place -->
@@ -70,7 +68,7 @@ svg.append("text")
     function update(selectedVar) {
     
       // Parse the Data
-      d3.csv("top_10_operators.csv").then( function(data) {
+      d3.csv("../top_10_operators.csv").then( function(data) {
 
     // Sort the data in descending order of the selected variable
     data.sort(function(a, b) {
@@ -126,4 +124,12 @@ u.join("rect")
     #buttondiv {
       background-color: rgb(36, 35, 35);
     }
+    #loss_recovery_button{
+  background-color: #780d0d;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
+  color: aliceblue;
+  margin-left: 2%;
+}
     </style>

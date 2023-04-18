@@ -37,23 +37,26 @@
       // Now I can use this dataset:
       function(data) {
         
-        // Add X axis --> it is a date format
         var x = d3.scaleTime()
           .domain(d3.extent(data, function(d) { return d.Year; }))
           .range([ 0, width ]);
         svg.append("g")
           .attr("transform", "translate(0," + height + ")")
           .call(d3.axisBottom(x))
-          // .call(d3.axisBottom(x).color("white"));
+          .select(".domain").style("stroke", "white"); // set color of axis line
+        svg.selectAll(".tick line").style("stroke", "white"); // set color of tick lines
+        svg.selectAll(".tick text").style("fill", "white"); // set color of tick labels
 
-          .style("color", "white");
-        // Add Y axis
+
         var y = d3.scaleLinear()
           .domain( [0, 90000])
           .range([ height, 0 ]);
         svg.append("g")
           .call(d3.axisLeft(y))
-          .style("color", "white");
+          .select(".domain").style("stroke", "white") // set color of axis line
+          svg.selectAll(".tick text").style("fill", "white"); // set color of tick labels
+
+      
     
         // Add the line
         svg.append("path")
