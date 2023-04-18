@@ -40,7 +40,8 @@
       // color palette
       const color = d3.scaleOrdinal()
         .domain(keys)
-        .range(d3.schemeSet2);
+        .range(["#ff9999", "#ff6666", "#ff3333", "#ff0000", "#cc0000", "#990000", "#660000", "#330000", "#000000"])
+
     
       //stack the data?
       const stackedData = d3.stack()
