@@ -4,7 +4,9 @@
 
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v6.js"></script>
-<h2 style="margin-left: 10%;">Oil Spill Liquid Types: A Pie Chart Comparison Across Years</h2>
+<div id="buttondiv">
+
+<h2 style="margin-left: 10%;color:white">Oil Spill Liquid Types: A Pie Chart Comparison Across Years</h2>
 <button class="arrow-button previous-button" onclick="window.location.href = 'Heatmap.html'" >&#8249;</button>
 <button class="arrow-button next-button" onclick="window.location.href = 'barchart.html'" >&#8250;</button>
 
@@ -17,7 +19,7 @@
   <button id="yearButton" onclick="update(data6)">2015</button>
   <button id="yearButton" onclick="update(data7)">2016</button>
   <button id="yearButton" onclick="update(data8)">2017</button>
-  
+</div>
 
 
 <!-- Create a div where the graph will take place -->
@@ -117,11 +119,7 @@
 
     .attr('x', 35)
     .attr('y', 20)
-    .text(function(d) { return d.data[0]; });
-
-
-
-
+    .text(function(d) { return d.data[0]; })
 
 }
     
@@ -129,3 +127,13 @@
     update(data1)
     
     </script>
+
+<style>
+ 
+  #my_dataviz {
+  background-color: rgb(36, 35, 35);
+}
+#buttondiv {
+      background-color: rgb(36, 35, 35);
+    }
+</style>

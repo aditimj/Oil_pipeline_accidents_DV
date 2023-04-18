@@ -4,20 +4,22 @@
 
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v6.js"></script>
-
+<div id="buttondiv">
 <!-- Add 2 buttons -->
+<h2 style="margin-left: 10%;color:white"> To do</h2>
+
 <button id="loss_recovery_button" onclick="update('var2')">Net Loss (Barrels)</button>
 <button id="loss_recovery_button" onclick="update('var1')">Liquid Recovery (Barrels)</button>
 <button class="arrow-button previous-button" onclick="window.location.href = 'piechart.html'" >&#8249;</button>
 <button class="arrow-button next-button" onclick="window.location.href = 'dashboard.html'" >&#8250;</button>
 
-
+</div>
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz"></div>
 <script>
 
     // set the dimensions and margins of the graph
-    const margin = {top: 90, right: 30, bottom: 250, left: 150},
+    const margin = {top: 20, right: 30, bottom: 250, left: 150},
         width = 1000 - margin.left - margin.right,
         height = 1000 - margin.top - margin.bottom;
     
@@ -95,3 +97,12 @@ u.join("rect")
     update('var2')
     
     </script>
+    <style>
+ 
+      #my_dataviz {
+      background-color: rgb(36, 35, 35);
+    }
+    #buttondiv {
+      background-color: rgb(36, 35, 35);
+    }
+    </style>
