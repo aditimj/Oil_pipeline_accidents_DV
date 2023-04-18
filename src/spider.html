@@ -4,9 +4,42 @@
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/ >
 		<link rel="stylesheet" type="text/css" href="util.css">
 
-		<title>Smoothed D3.js Radar Chart</title>
+		<!-- Google fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+		<!-- D3.js -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+
+		<style>
+			body {
+				font-family: 'Open Sans', sans-serif;
+				font-size: 10px;
+				font-weight: 300;
+				fill: white;
+				/* text-align: center; */
+				/* text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff; */
+				cursor: default;
+			}
+			
+			.legend {
+				font-family: 'Raleway', sans-serif;
+				fill: white;
+			}
+			
+			.tooltip {
+				fill: white;
+			}
+			#my_dataviz {
+  background-color: rgb(36, 35, 35);
+}
+				
+
+		</style>
+	
+	</head>
+	<body>
 		<div id="my_dataviz">
-			<h2 style="margin-left: 10%;">Year-wise cost incurred due to types of pipeline spills </h2>
 			<div class="text-container">
 			  <p>This is some example text to display alongside the visualization.
 				This is some example text to display alongside the visualization.
@@ -28,44 +61,13 @@
 			  </p>
 		  </div>
 		  </div>
-		<!-- Google fonts -->
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 
-		<!-- D3.js -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-		
-		<style>
-			body {
-				font-family: 'Open Sans', sans-serif;
-				font-size: 10px;
-				font-weight: 300;
-				fill: #242424;
-				/* text-align: center; */
-				text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
-				cursor: default;
-			}
-			
-			.legend {
-				font-family: 'Raleway', sans-serif;
-				fill: #333333;
-			}
-			
-			.tooltip {
-				fill: #333333;
-			}
-
-
-		</style>
-	
-	</head>
-	<body>
-		<h2 style="margin-left: 10%;">Causes of Oil Pipeline Spill over the years (2010 - 2017)</h2>
-		<button class="arrow-button previous-button" onclick="window.location.href = 'circular.html'" >&#8249;</button>
-		<button class="arrow-button next-button" onclick="window.location.href = 'Heatmap.html'" >&#8250;</button>
 	  
 		<div class="radarChart" >
-			
+			<h2 style="margin-left: 10%;color:white;">Causes of Oil Pipeline Spill over the years (2010 - 2017)</h2>
+			<button class="arrow-button previous-button" onclick="window.location.href = 'circular.html'" >&#8249;</button>
+			<button class="arrow-button next-button" onclick="window.location.href = 'Heatmap.html'" >&#8250;</button>
+	
 		</div>
 
 		<script src="radarChart.js"></script>	
@@ -145,6 +147,23 @@
 		background-color: #f9f9f9;
 		border: 1px solid #ddd;
 	}
+	.body {
+				font-family: 'Arial', sans-serif;
+				font-size: 10px;
+				font-weight: 300;
+				fill: white;
+				/* text-align: center; */
+				/* text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff; */
+				cursor: default;
+			}
+	/* .h2 {
+			font-size: 22px;
+			margin: 20px;
+			 */
+/* } */
+	.radarChart {
+		background-color: rgb(36, 35, 35);
+		}
   </style>
 	</body>
 </html>
