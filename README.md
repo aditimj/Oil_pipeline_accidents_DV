@@ -6,7 +6,7 @@ Datset link - https://www.kaggle.com/datasets/usdot/pipeline-accidents
 
 To get started with this project, follow these steps:
 
-- Clone the repository by running git clone `https://github.com/aditiiilaturkar/Oil_pipeline_accidents_DV.git ` in the terminal
+- Clone the repository by running git clone `https://github.com/aditiiilaturkar/Oil_pipeline_accidents_DV ` in the terminal
 - Navigate to the src directory by running `cd src` in your terminal.
 - Open the `home.html` file in your preferred web browser.
 - Navigate to the dashboard to see the visualization.
