@@ -8,3 +8,4 @@ pivot_table = pd.pivot_table(df, index='Year', columns='LiquidType', aggfunc='si
 
 # Save the pivot table to a new csv file
 pivot_table.to_csv('donut_final.csv')
+#ftrfctghvgh
